@@ -1,0 +1,6 @@
+.FilmsScanner {
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	background-color: darkblue;	
+}
