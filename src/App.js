@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Layout from "./hoc/Layout";
 import Navigation from "./components/Navigation/Navigation";
-import FilmsScanner from "./containers/FilmsScanner/FilmsScanner";
+import Popular from "./containers/Popular/Popular";
 
 import './App.css';
 
@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <Navigation />
         <Layout>
-          <FilmsScanner />
+          <Popular />
         </Layout>  
       </div>
     );

@@ -5,6 +5,7 @@ export default {
 		return axios.get(url)
 			.then(res => {
 				console.log(res);
+				return res;
 			});
 	}
 };

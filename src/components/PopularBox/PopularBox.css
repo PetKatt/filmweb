@@ -1,0 +1,21 @@
+.PopularBox {
+	color: white;
+	margin: 12px auto;
+	text-align: center;
+}
+
+.Notes {
+	margin: auto;
+	width: 50%;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.Notes div {
+	display: block;
+	margin-bottom: 12px;
+}
+
+.Title {
+	font-size: 36px;
+}
