@@ -1,7 +1,10 @@
 .PopularBox {
-	color: white;
 	margin: 12px auto;
+	width: 35%;
 	text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
 }
 
 .Notes {
@@ -12,10 +15,14 @@
 }
 
 .Notes div {
-	display: block;
 	margin-bottom: 12px;
 }
 
 .Title {
 	font-size: 36px;
+}
+
+.Description {
+	font-size: 12px;
+	text-align: justify;
 }

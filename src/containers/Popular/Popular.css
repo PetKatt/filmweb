@@ -2,9 +2,9 @@
 	box-sizing: border-box;
 	text-align: center;
 	width: 100%;
-	margin: 12px auto;
+	margin: auto;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	background-color: darkblue;	
+	background-color: #F4F4F4;	
 }

@@ -9,7 +9,7 @@ const popularBox = (props) => (
 		</div>
 		<div className={classes.Notes}>
 			<div className={classes.Title}>{props.title}</div>		
-			<div>{props.description}</div>		
+			<div className={classes.Description}>{props.description}</div>		
 			<div>{props.popularity}</div>		
 			<div>{props.releaseDate}</div>		
 			<div>{props.vote}</div>		
