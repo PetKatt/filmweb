@@ -27,10 +27,10 @@ class App extends Component {
               <Route path="/person" component={People} />
             </Switch>
 
-            <Route path="/movie" render={({match}) => {
+            <Route exact path="/movie" render={({ match }) => {
               return <Popular url={match.url} />
             }} />
-            <Route path="/tv" render={({match}) => {
+            <Route exact path="/tv" render={({ match }) => {
               return <Popular url={match.url} />
             }} />
           </Layout>  

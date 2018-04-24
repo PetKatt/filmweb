@@ -14,22 +14,22 @@ const navigation = () => (
 		<div className={classes.NavLeft}>
 			<ul>
 				<li><Link style={{color: "white", textDecoration: "none"}} to="/discover">
-					Discover</Link></li>
+					<h3>Discover</h3></Link></li>
 				<li><Link style={{color: "white", textDecoration: "none"}} to="/movie">
-					Movies</Link></li>
+					<h3>Movies</h3></Link></li>
 				<li><Link style={{color: "white", textDecoration: "none"}} to="/tv">
-					TV Shows</Link></li>
+					<h3>TV Shows</h3></Link></li>
 				<li><Link style={{color: "white", textDecoration: "none"}} to="/person">
-					People</Link></li>
+					<h3>People</h3></Link></li>
 			</ul>
 		</div>
 
 		<div className={classes.NavRight}>
 			<ul>
 				<li><Link style={{color: "white", textDecoration: "none"}} to="signin">
-					Sign IN</Link></li>
+					<h3>Sign IN</h3></Link></li>
 				<li><Link style={{color: "white", textDecoration: "none"}} to="signup">
-					Sign UP</Link></li>
+					<h3>Sign UP</h3></Link></li>
 			</ul>
 		</div>
 			

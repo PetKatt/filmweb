@@ -21,11 +21,17 @@ class Popular extends Component {
 
 	render() {
 		let films = <Loader action="Loading . . ." />
+
 		if (this.state.popularArray) {
 			films = this.state.popularArray.map(film => {
+				let newTitle = film.original_title ? film.original_title : film.original_name; 
+				let preparedTitle = newTitle.toLowerCase().split(" ").join("-");
 				return <PopularBox 
 					key={film.id}
-					title={film.original_title}
+					id={film.id}
+					url={this.props.url}
+					preparedTitle={preparedTitle}
+					title={newTitle}
 					description={film.overview}
 					popularity={film.popularity}
 					imagePath={film.poster_path}
@@ -33,6 +39,7 @@ class Popular extends Component {
 					vote={film.vote_average} />
 			});
 		} 
+
 		return (
 			<div className={classes.Popular}>
 				{films}	
