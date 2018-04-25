@@ -1,0 +1,34 @@
+.header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	font-size: 32px;
+	font-weight: 600;
+	margin-right: 300px;
+}
+
+.rightMenu {
+	display: flex;
+	flex-flow: row-reverse nowrap;
+}
+
+.rightMenu h3 {
+	margin-left: 50px;
+}
+
+.formContainer {
+	text-align: center;
+}
+
+.formContainer select, input {
+	margin-right: 24px;
+	padding: 10px;
+	border-radius: 10px;
+	border: solid 3px darkgreen;
+	font-weight: 600;
+	font-size: 16px;
+}

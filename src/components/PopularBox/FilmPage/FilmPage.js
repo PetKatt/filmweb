@@ -11,15 +11,7 @@ class FilmPage extends Component {
 	render() {
 		return (
 			<div className={classes.FilmPage}>
-				<div className={classes.Box}>
-					<div className={classes.Image}>
-						<img src="#" alt="#" />
-					</div>
-
-					<div className={classes.Notes}>
-						<div className={classes.Title}>FILM PAGE!!!!</div>
-					</div>
-				</div>		
+				<p>FILM PAGE!!!!</p>
 			</div>
 		);
 	}

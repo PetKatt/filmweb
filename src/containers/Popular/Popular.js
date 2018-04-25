@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import api from "../../utils/api";
 import Loader from "../../components/Loader/Loader";
 import PopularBox from "../../components/PopularBox/PopularBox";
@@ -41,11 +42,13 @@ class Popular extends Component {
 		} 
 
 		return (
-			<div className={classes.Popular}>
-				{films}	
-			</div>
+			<React.Fragment>
+				<div className={classes.Popular}>
+					{films}	
+				</div>			
+		  </React.Fragment>
 		);
 	}
 }
 
-export default Popular;
+export default withRouter(Popular);
