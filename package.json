@@ -13,10 +13,14 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "startapp": "concurrently 'npm:css' 'npm:start'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass-build": "node-sass-chokidar src/ -o src/",
+    "sass-watch": "node-sass-chokidar src/ -o src/ --watch",
+    "css": "concurrently 'npm:sass-build' 'npm:sass-watch'"
   },
   "devDependencies": {
     "concurrently": "^3.6.1",
