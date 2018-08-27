@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
 // variables
 $grey: #38494E;
+$light-green: #01D277;
 $dark-green: #081C24;
 
 // base settings
@@ -80,6 +81,48 @@ html {
 	}
 }
 
+// Searchbox
+.searchbox {
+	margin: 0.5em 1em;
+	overflow: hidden;
+
+	label {
+		div {
+			display: inline-block;
+			margin: 0 1.4em;
+
+			i {
+				margin-right: 0.2em;
+			}
+		}
+
+		input[type="text"] {
+			width: 70%;
+			padding: 0.5em;
+			font-size: 1em;
+			border: 1px solid #ccc;
+
+			&:focus {
+				border: 1px solid #555;
+			}
+		}
+	}
+
+	input[type="submit"] {
+		padding: 0.5em 2em;
+		font-size: 1em;
+		border: 1px solid #ccc;
+		background-color: $dark-green;
+		color: #ffffff;
+
+		&:hover {
+			background-color: darken($dark-green, 10%);
+		}
+	}
+}
+
+
+// Media Queries
 @media screen and (max-width: 1024px) {
 	.navigation {
 		.people {

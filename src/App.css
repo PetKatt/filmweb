@@ -47,6 +47,30 @@ html {
   .navigation .people {
     margin-right: auto; }
 
+.searchbox {
+  margin: 0.5em 1em;
+  overflow: hidden; }
+  .searchbox label div {
+    display: inline-block;
+    margin: 0 1.4em; }
+    .searchbox label div i {
+      margin-right: 0.2em; }
+  .searchbox label input[type="text"] {
+    width: 70%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc; }
+    .searchbox label input[type="text"]:focus {
+      border: 1px solid #555; }
+  .searchbox input[type="submit"] {
+    padding: 0.5em 2em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    background-color: #081C24;
+    color: #ffffff; }
+    .searchbox input[type="submit"]:hover {
+      background-color: black; }
+
 @media screen and (max-width: 1024px) {
   .navigation .people {
     margin-right: 1.5em; } }
