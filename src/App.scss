@@ -1,19 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
-// variables
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto:300i,400,700&subset=latin-ext');
+
+// VARIABLES
 $grey: #38494E;
 $light-green: #01D277;
 $dark-green: #081C24;
 
-// base settings
+// RESET
+* {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+// BASE SETTINGS
 html {
 	font-size: 20px;
 }
-.App {
+
+body {
+	width: 100%;
 	margin: 0;
-	padding: 0;
-	font-family: 'Roboto', sans-serif;
 }
 
+.App {
+	font-family: 'Roboto', sans-serif;
+}
 
 // Navigation
 .navigation {
@@ -117,6 +141,169 @@ html {
 
 		&:hover {
 			background-color: darken($dark-green, 10%);
+		}
+	}
+}
+
+// Display
+.display {
+	margin: 1.5em 0;
+	background-image: radial-gradient(ellipse farthest-corner at center, lighten($grey, 30%), darken($dark-green, 30%), lighten($dark-green, 30%), darken($grey, 30%));
+
+	.display__header {
+		margin: 0 1.5em;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		.display__header__title {
+			h2 {
+				color: #ffffff;
+				text-shadow: 0 0 1em black;
+				font-size: 1.5em;
+			}
+		}
+
+		.display__header__links {
+			a {
+				text-shadow: 0 0 1em black;
+				margin: 0 1em;
+				font-size: 1em;
+				text-decoration: none;
+				color: $light-green;
+
+				&:hover {
+					text-decoration: underline;
+					color: lighten($light-green, 8%);
+				}
+			}
+		}
+	}
+
+	.display__container {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+	}
+}
+
+// Box
+.box {
+	margin: 1em;
+	width: 45%;
+	display: flex;
+	background-color: $light-green;
+	box-sizing: border-box;
+	border-radius: 0 2em 2em 0; 
+	box-shadow: 0 0 .5em .1em $light-green;
+
+	transition: .2s ease-in-out;
+
+	&:hover {
+		box-shadow: 0 0 .5em .1em darken($light-green, 20%);
+	}
+
+	a {
+		cursor: pointer;
+		color: black;
+		text-decoration: none;
+	}
+
+
+	.box__poster {
+		width: 40%;
+		cursor: pointer;
+		opacity: 0.95;
+
+		transition: .2s ease-in-out;
+
+		&:hover {
+			box-shadow: 0 0 1em #aaaaaa;
+			opacity: 1;
+		}
+	}
+
+	.box__details {
+		padding-left: .5em;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		background-image: linear-gradient(to top right, $light-green 60%, darken($light-green, 50%) );
+		border-radius: 0 2em 2em 0;
+
+		.box__details__header {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-around;
+			align-items: center;
+
+			font-weight: 300;
+			font-style: italic;
+
+			.box-avg {
+				font-weight: bold;
+			}
+
+			.box-title {
+				flex: 0 1 80%;
+				cursor: pointer;
+
+				h3 {
+					padding: .2em 0 0 0;
+					font-size: 1em;
+					text-shadow: 0 0 .5em #ffffff;
+					transition: .2s ease-in-out; 
+
+					&:hover {
+						text-shadow: 0 0 .2em #ffffff,
+						0 0 .3em #cccccc;
+					}
+				}
+
+				h5 {
+					padding: 0 0 .2em 0;
+					letter-spacing: .1em;
+				}
+			}
+		}
+
+		.box__details__main {
+			font-size: .7em;
+			padding: .5em 0;
+			flex: 0 1 30%;
+			font-family: 'Lato', sans-serif;
+
+			&::first-letter {
+				text-shadow: .1em .1em .1em darken($grey, 50%);
+				font-size: 1.2em;
+				padding-right: .1em;
+			}
+		}
+
+		.box-btn {
+			padding: .6em 0;
+			width: 50%;
+			margin-bottom: 0.3em;
+			cursor: pointer;
+
+			letter-spacing: .1em;
+			transition: .2s ease;
+			border-radius: 1em;
+			border: .1em dotted $light-green;
+			box-shadow: .11em .12em 3em darken(#ffffff, 10%),
+			-.12em .11em 3em darken(#ffffff, 10%),
+			.11em -.11em 3em darken(#ffffff, 10%),
+			-.12em -.12em 3em darken(#ffffff, 10%);
+
+			&:hover {
+				border: .1em solid darken($light-green, 30%);
+				background-color: lighten($grey, 50%);
+				box-shadow: .11em .12em 3em darken($light-green, 20%),
+			-.12em .11em 3em darken($light-green, 20%),
+			.11em -.11em 3em darken($light-green, 20%),
+			-.12em -.12em 3em darken($light-green, 20%);
+			}
 		}
 	}
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class Searchbox extends Component {
 
 	state = {
@@ -19,7 +20,7 @@ class Searchbox extends Component {
 		return (
 			<div className="searchbox">
 				<form onSubmit={this.handleSubmit}>
-					<label><div><i class="fas fa-search"></i>Search</div>
+					<label><div><i className="fas fa-search"></i>Search</div>
 						<input type="text" name="search" placeholder="Search..." onChange={this.handleChange} value={this.state.value} />
 					</label>
 
