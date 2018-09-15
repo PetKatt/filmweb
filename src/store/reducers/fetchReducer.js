@@ -1,8 +1,9 @@
 import { FETCH_CONFIGURATION } from "../actions/types";
-import { FETCH_FILMS } from "../actions/types";
+import { FETCH_FILMS, FETCH_PEOPLE } from "../actions/types";
 
 const initialState = {
 	items: [],
+	people: [],
 	config: {}
 }
 
@@ -12,6 +13,11 @@ export default function(state=initialState, action) {
 			return {
 				...state,
 				items: action.payload
+			};
+		case FETCH_PEOPLE:
+			return {
+				...state,
+				people: action.payload
 			};
 		case FETCH_CONFIGURATION:
 			return {

@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 // import Loader from "../../Loader/Loader";
 import Box from "../../Box/Box";
 
-import { fetchDiscoverMovie } from "../../../store/actions/fetchActions";
+import { fetchDiscoverTv } from "../../../store/actions/fetchActions";
 import utils from "../../../utils/utils";
 
 
 class Display extends Component {
 	
 	componentWillMount() {
-		this.props.fetchDiscoverMovie();
+		this.props.fetchDiscoverTv();
 	}
 
 
@@ -29,8 +29,8 @@ class Display extends Component {
 					id={f.id}
 					posterURL={`${config.images.secure_base_url}${config.images.poster_sizes[2]}${f.poster_path}`}
 					avg={f.vote_average}
-					title={f.title}
-					release={f.release_date}
+					title={f.name}
+					release={f.first_air_date}
 					overview={utils.shortingText(f, i)}
 				/>
 			);
@@ -63,5 +63,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-	fetchDiscoverMovie
+	fetchDiscoverTv
 })(Display);

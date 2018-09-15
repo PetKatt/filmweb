@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import { fetchConfiguration } from "../../store/actions/fetchActions";
 
 
-class Layout extends Component {
+class Layout extends PureComponent {
+	
 	componentWillMount() {
 		this.props.fetchConfiguration();
 	}

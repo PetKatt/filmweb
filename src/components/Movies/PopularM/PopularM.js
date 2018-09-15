@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 // import Loader from "../../Loader/Loader";
 import Box from "../../Box/Box";
 
-import { fetchDiscoverMovie } from "../../../store/actions/fetchActions";
+import { fetchMoviesPopular } from "../../../store/actions/fetchActions";
 import utils from "../../../utils/utils";
 
 
 class Display extends Component {
 	
 	componentWillMount() {
-		this.props.fetchDiscoverMovie();
+		this.props.fetchMoviesPopular();
 	}
 
 
@@ -41,11 +41,13 @@ class Display extends Component {
 
 				<div className="display__header">
 					<div className="display__header__title">
-						<h2>Discover New Movies & TV Shows</h2>
+						<h2>Popular Movies</h2>
 					</div>
 					<div className="display__header__links">
-						<Link to="/discover/movie">Movies</Link>
-						<Link to="/discover/tv">TV Shows</Link>
+						<Link to="/movie">Popular</Link>
+						<Link to="/movie/top-rated">Top Rated</Link>
+						<Link to="/movie/upcoming">Upcoming</Link>
+						<Link to="/movie/now-playing">Now Playing</Link>
 					</div>
 				</div>
 
@@ -63,5 +65,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-	fetchDiscoverMovie
+	fetchMoviesPopular
 })(Display);

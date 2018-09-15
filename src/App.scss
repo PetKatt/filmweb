@@ -186,6 +186,16 @@ body {
 		flex-flow: row wrap;
 		justify-content: space-evenly;
 	}
+
+	//PopularPeople container
+	.display__container--people {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		align-items: center;
+
+
+	}
 }
 
 // Box
@@ -291,19 +301,41 @@ body {
 			transition: .2s ease;
 			border-radius: 1em;
 			border: .1em dotted $light-green;
-			box-shadow: .11em .12em 3em darken(#ffffff, 10%),
-			-.12em .11em 3em darken(#ffffff, 10%),
-			.11em -.11em 3em darken(#ffffff, 10%),
-			-.12em -.12em 3em darken(#ffffff, 10%);
+			box-shadow: .11em .12em .6em darken(#ffffff, 10%),
+			-.12em .11em .6em darken(#ffffff, 10%),
+			.11em -.11em .6em darken(#ffffff, 10%),
+			-.12em -.12em .6em darken(#ffffff, 10%);
 
 			&:hover {
 				border: .1em solid darken($light-green, 30%);
 				background-color: lighten($grey, 50%);
-				box-shadow: .11em .12em 3em darken($light-green, 20%),
-			-.12em .11em 3em darken($light-green, 20%),
-			.11em -.11em 3em darken($light-green, 20%),
-			-.12em -.12em 3em darken($light-green, 20%);
+				box-shadow: .11em .12em .6em darken($light-green, 20%),
+			-.12em .11em .6em darken($light-green, 20%),
+			.11em -.11em .6em darken($light-green, 20%),
+			-.12em -.12em .6em darken($light-green, 20%);
 			}
+		}
+	}
+}
+
+// PeopleBox
+.peopleBox {
+	display: flex;
+	flex-flow: column nowrap;
+
+	padding: 1em;
+
+	div {
+		max-width: 300px;
+		color: #ffffff;
+		margin: 0.5em 0 0 0;
+
+		h3 {
+
+		}
+
+		p {
+			font-size: .9em;
 		}
 	}
 }

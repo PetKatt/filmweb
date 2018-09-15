@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 // import Loader from "../../Loader/Loader";
 import Box from "../../Box/Box";
 
-import { fetchDiscoverMovie } from "../../../store/actions/fetchActions";
+import { fetchTVShowsOnTV } from "../../../store/actions/fetchActions";
 import utils from "../../../utils/utils";
 
 
 class Display extends Component {
 	
 	componentWillMount() {
-		this.props.fetchDiscoverMovie();
+		this.props.fetchTVShowsOnTV();
 	}
 
 
@@ -29,8 +29,8 @@ class Display extends Component {
 					id={f.id}
 					posterURL={`${config.images.secure_base_url}${config.images.poster_sizes[2]}${f.poster_path}`}
 					avg={f.vote_average}
-					title={f.title}
-					release={f.release_date}
+					title={f.name}
+					release={f.first_air_date}
 					overview={utils.shortingText(f, i)}
 				/>
 			);
@@ -41,11 +41,13 @@ class Display extends Component {
 
 				<div className="display__header">
 					<div className="display__header__title">
-						<h2>Discover New Movies & TV Shows</h2>
+						<h2>Currently Airing TV Shows</h2>
 					</div>
 					<div className="display__header__links">
-						<Link to="/discover/movie">Movies</Link>
-						<Link to="/discover/tv">TV Shows</Link>
+						<Link to="/tv">Popular</Link>
+						<Link to="/tv/top-rated">Top Rated</Link>
+						<Link to="/tv/on-the-air">On TV</Link>
+						<Link to="/tv/airing-today">Airing Today</Link>
 					</div>
 				</div>
 
@@ -63,5 +65,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-	fetchDiscoverMovie
+	fetchTVShowsOnTV
 })(Display);
