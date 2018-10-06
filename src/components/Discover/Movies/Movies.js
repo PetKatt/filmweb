@@ -24,7 +24,7 @@ class Display extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.props.fetchDiscoverMovie("popularity.desc", nextProps.page);
+		this.props.fetchDiscoverMovie(nextProps.sortType, nextProps.page);
 	}
 
 
