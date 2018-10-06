@@ -65,7 +65,7 @@ body {
     margin-right: auto; }
 
 .searchbox {
-  margin: 0.5em 1em;
+  margin: 1em;
   overflow: hidden; }
   .searchbox label div {
     display: inline-block;
@@ -89,7 +89,6 @@ body {
       background-color: black; }
 
 .display {
-  margin: 1.5em 0;
   background-image: radial-gradient(ellipse farthest-corner at center, #7d99a2, black, #247da1, black); }
   .display .display__header {
     margin: 0 1.5em;
@@ -224,6 +223,19 @@ body {
     margin: 0.5em 0 0 0; }
     .peopleBox div p {
       font-size: .9em; }
+
+.filter {
+  color: #ffffff;
+  margin: .7em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .filter label {
+    margin: 0 .7em; }
+    .filter label select {
+      margin-left: .5em;
+      padding: .5em;
+      border-radius: 1em; }
 
 @media screen and (max-width: 1024px) {
   .navigation .people {

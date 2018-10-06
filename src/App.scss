@@ -107,7 +107,7 @@ body {
 
 // Searchbox
 .searchbox {
-	margin: 0.5em 1em;
+	margin: 1em;
 	overflow: hidden;
 
 	label {
@@ -147,7 +147,6 @@ body {
 
 // Display
 .display {
-	margin: 1.5em 0;
 	background-image: radial-gradient(ellipse farthest-corner at center, lighten($grey, 30%), darken($dark-green, 30%), lighten($dark-green, 30%), darken($grey, 30%));
 
 	.display__header {
@@ -360,6 +359,25 @@ body {
 
 		p {
 			font-size: .9em;
+		}
+	}
+}
+
+//Filter
+.filter {
+	color: #ffffff;
+	margin: .7em 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	label {
+		margin: 0 .7em;
+
+		select {
+			margin-left: .5em;
+			padding: .5em;
+			border-radius: 1em;
 		}
 	}
 }

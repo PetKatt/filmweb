@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 
 // import Loader from "../../Loader/Loader";
 import Box from "../../Box/Box";
+import Filter from "../../Filter/Filter";
 
 import { fetchDiscoverMovie } from "../../../store/actions/fetchActions";
 import { 
 	updatePage,
-	updateSortType } from "../../../store/actions/updateActions";
-
+	updateSortType,
+	updateYear } from "../../../store/actions/updateActions";
 import utils from "../../../utils/utils";
 
 
@@ -24,7 +25,7 @@ class Display extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.props.fetchDiscoverMovie(nextProps.sortType, nextProps.page);
+		this.props.fetchDiscoverMovie(nextProps.year, nextProps.sortType, nextProps.page);
 	}
 
 
@@ -65,9 +66,15 @@ class Display extends Component {
 					</div>
 				</div>
 
+				<Filter 
+					updateSortType={this.props.updateSortType}
+					updateYear={this.props.updateYear}
+				/>
+
 				<div className="display__container">
 					{f}
 				</div>
+
 				<div className="display__footer">
 					<button onClick={this.handleOnClick}>Next Page</button>
 					<div>Page {this.props.page}</div>	
@@ -81,11 +88,13 @@ const mapStateToProps = (state) => ({
 	films: state.films.items,
 	config: state.films.config,
 	page: state.update.page,
-	sortType: state.update.sortType
+	sortType: state.update.sortType,
+	year: state.update.year
 });
 
 export default connect(mapStateToProps, {
 	fetchDiscoverMovie,
 	updatePage,
-	updateSortType
+	updateSortType,
+	updateYear
 })(Display);

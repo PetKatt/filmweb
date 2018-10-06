@@ -24,12 +24,13 @@ export const fetchConfiguration = () => dispatch => {
 
 
 // DiscoverMovie API
-export const fetchDiscoverMovie = (sortBy, pageNumber) => dispatch => {
+export const fetchDiscoverMovie = (yearNumber, sortBy, pageNumber) => dispatch => {
 
+	if(!yearNumber) yearNumber = 2018;
 	if(!sortBy) sortBy = "popularity.desc";
 	if(!pageNumber) pageNumber = 1;
 
-	const fetchDiscoverMovieAPI = `https://api.themoviedb.org/3/discover/movie?api_key=e474d4efb60111c6e12c76f0330b22e4&language=en-US&sort_by=${sortBy}&page=${pageNumber}`;
+	const fetchDiscoverMovieAPI = `https://api.themoviedb.org/3/discover/movie?api_key=e474d4efb60111c6e12c76f0330b22e4&language=en-US&sort_by=${sortBy}&page=${pageNumber}&year=${yearNumber}`;
 
 	axios.get(fetchDiscoverMovieAPI)
 		.then(res => {

@@ -1,6 +1,7 @@
 import { 
 	UPDATE_PAGE,
-	UPDATE_SORTTYPE } from "./types";
+	UPDATE_SORTTYPE,
+	UPDATE_YEAR } from "./types";
 
 export const updatePage = (pageNumber) => dispatch => {
 	return dispatch({
@@ -13,5 +14,12 @@ export const updateSortType = (sortType) => dispatch => {
 	return dispatch({
 		type: UPDATE_SORTTYPE,
 		payload: sortType
+	});
+}
+
+export const updateYear = (yearNumber) => dispatch => {
+	return dispatch({
+		type: UPDATE_YEAR,
+		payload: yearNumber
 	});
 }
