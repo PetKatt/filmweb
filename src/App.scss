@@ -193,8 +193,32 @@ body {
 		flex-flow: row wrap;
 		justify-content: space-evenly;
 		align-items: center;
+	}
 
+	.display__footer {
+		margin: 0 1.5em;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
 
+		button  {
+			margin: .5em;
+			padding: .5em;
+			background-image: linear-gradient(to top right, $light-green 60%, darken($light-green, 50%) );
+			border-radius: 0 2em 2em 0;
+			border: transparent;
+
+			&:hover {
+				cursor: pointer;
+				box-shadow: 0 0 1em .3em darken($light-green, 20%);
+			}
+		}
+
+		div {
+			margin: .5em;
+			text-shadow: .1em .1em .2em #ffffff, .1em -.1em .2em #ffffff, -.1em .1em .2em #ffffff, -.1em -.1em .2em #ffffff,;
+		}
 	}
 }
 
@@ -211,7 +235,7 @@ body {
 	transition: .2s ease-in-out;
 
 	&:hover {
-		box-shadow: 0 0 .5em .1em darken($light-green, 20%);
+		box-shadow: 0 0 3em .8em darken($light-green, 20%);
 	}
 
 	a {

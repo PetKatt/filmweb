@@ -24,9 +24,13 @@ export const fetchConfiguration = () => dispatch => {
 
 
 // DiscoverMovie API
-const fetchDiscoverMovieAPI = "https://api.themoviedb.org/3/discover/movie?api_key=e474d4efb60111c6e12c76f0330b22e4&language=en-US&sort_by=popularity.desc&page=1";
+export const fetchDiscoverMovie = (sortBy, pageNumber) => dispatch => {
 
-export const fetchDiscoverMovie = () => dispatch => {
+	if(!sortBy) sortBy = "popularity.desc";
+	if(!pageNumber) pageNumber = 1;
+
+	const fetchDiscoverMovieAPI = `https://api.themoviedb.org/3/discover/movie?api_key=e474d4efb60111c6e12c76f0330b22e4&language=en-US&sort_by=${sortBy}&page=${pageNumber}`;
+
 	axios.get(fetchDiscoverMovieAPI)
 		.then(res => {
 			let films = res.data.results;

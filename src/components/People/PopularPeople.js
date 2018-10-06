@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 // import Loader from "../../Loader/Loader";
 import PeopleBox from "../Box/PeopleBox/PeopleBox";

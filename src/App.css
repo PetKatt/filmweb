@@ -119,6 +119,24 @@ body {
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center; }
+  .display .display__footer {
+    margin: 0 1.5em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center; }
+    .display .display__footer button {
+      margin: .5em;
+      padding: .5em;
+      background-image: linear-gradient(to top right, #01D277 60%, black);
+      border-radius: 0 2em 2em 0;
+      border: transparent; }
+      .display .display__footer button:hover {
+        cursor: pointer;
+        box-shadow: 0 0 1em 0.3em #016c3d; }
+    .display .display__footer div {
+      margin: .5em;
+      text-shadow: 0.1em 0.1em 0.2em #ffffff, 0.1em -0.1em 0.2em #ffffff, -0.1em 0.1em 0.2em #ffffff, -0.1em -0.1em 0.2em #ffffff; }
 
 .box {
   margin: 1em;
@@ -130,7 +148,7 @@ body {
   box-shadow: 0 0 0.5em 0.1em #01D277;
   transition: .2s ease-in-out; }
   .box:hover {
-    box-shadow: 0 0 0.5em 0.1em #016c3d; }
+    box-shadow: 0 0 3em 0.8em #016c3d; }
   .box a {
     cursor: pointer;
     color: black;
