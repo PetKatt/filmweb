@@ -16,15 +16,15 @@ import utils from "../../../utils/utils";
 
 class Display extends Component {
 	
-	componentWillMount() {
+	UNSAFE_componentWillMount() {
 		this.props.fetchDiscoverMovie();
 	}
 
-	shouldComponentUpdate(nextProps) {
+	UNSAFE_shouldComponentUpdate(nextProps) {
 		if(nextProps !== this.props) return true;
 	}
 
-	componentWillReceiveProps(nextProps) {
+	UNSAFE_componentWillReceiveProps(nextProps) {
 		this.props.fetchDiscoverMovie(nextProps.year, nextProps.sortType, nextProps.page);
 	}
 

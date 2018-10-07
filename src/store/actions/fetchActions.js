@@ -48,9 +48,14 @@ export const fetchDiscoverMovie = (yearNumber, sortBy, pageNumber) => dispatch =
 
 
 //DiscoverTv API
-const fetchDiscoverTvAPI = "https://api.themoviedb.org/3/discover/tv?api_key=e474d4efb60111c6e12c76f0330b22e4&language=en-US&sort_by=popularity.desc&page=1";
+export const fetchDiscoverTv = (yearNumber, sortBy, pageNumber) => dispatch => {
 
-export const fetchDiscoverTv = () => dispatch => {
+	if(!yearNumber) yearNumber = 2018;
+	if(!sortBy) sortBy = "popularity.desc";
+	if(!pageNumber) pageNumber = 1;
+
+	const fetchDiscoverTvAPI = `https://api.themoviedb.org/3/discover/tv?api_key=e474d4efb60111c6e12c76f0330b22e4&language=en-US&sort_by=${sortBy}&first_air_date_year=${yearNumber}&page=${pageNumber}`;
+
 	axios.get(fetchDiscoverTvAPI)
 		.then(res => {
 			let films = res.data.results;
