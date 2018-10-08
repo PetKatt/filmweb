@@ -88,6 +88,9 @@ body {
     .searchbox input[type="submit"]:hover {
       background-color: black; }
 
+.loader {
+  font-size: 5em; }
+
 .display {
   background-image: radial-gradient(ellipse farthest-corner at center, #7d99a2, black, #247da1, black); }
   .display .display__header {

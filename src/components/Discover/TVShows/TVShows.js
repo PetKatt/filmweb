@@ -16,16 +16,14 @@ import utils from "../../../utils/utils";
 
 class Display extends Component {
 	
-	componentWillMount() {
+	componentDidMount() {
 		this.props.fetchDiscoverTv();
 	}
 
-	shouldComponentUpdate(nextProps) {
-		if(nextProps !== this.props) return true;
-	}
-
-	componentWillReceiveProps(nextProps) {
-		this.props.fetchDiscoverTv(nextProps.year, nextProps.sortType, nextProps.page);
+	componentDidUpdate(prevProps, prevState) {
+		if(prevProps.page !== this.props.page || prevProps.sortType !== this.props.sortType || prevProps.year !== this.props.year) {
+			this.props.fetchDiscoverTv(this.props.year, this.props.sortType, this.props.page);
+		}
 	}
 
 	handleOnClick = () => {

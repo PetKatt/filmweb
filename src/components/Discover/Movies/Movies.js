@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-// import Loader from "../../Loader/Loader";
+import Loader from "../../Loader/Loader";
 import Box from "../../Box/Box";
 import Filter from "../../Filter/Filter";
 
@@ -15,17 +15,15 @@ import utils from "../../../utils/utils";
 
 
 class Display extends Component {
-	
-	UNSAFE_componentWillMount() {
+
+	componentDidMount() {
 		this.props.fetchDiscoverMovie();
 	}
 
-	UNSAFE_shouldComponentUpdate(nextProps) {
-		if(nextProps !== this.props) return true;
-	}
-
-	UNSAFE_componentWillReceiveProps(nextProps) {
-		this.props.fetchDiscoverMovie(nextProps.year, nextProps.sortType, nextProps.page);
+	componentDidUpdate(prevProps, prevState) {
+		if(prevProps.page !== this.props.page || prevProps.sortType !== this.props.sortType || prevProps.year !== this.props.year) {
+			this.props.fetchDiscoverMovie(this.props.year, this.props.sortType, this.props.page);
+		}
 	}
 
 
@@ -37,6 +35,8 @@ class Display extends Component {
 		const { films, config } = this.props;
 		// console.log("FILMS from Movies.js", films);
 		// console.log("CONFIG from Movies.js", config);
+
+		if(!this.props.films) {return (<Loader action="LOADING > > >" />);}
 
 		const f = films.map((f, i) => {
 			return (

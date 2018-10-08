@@ -145,6 +145,11 @@ body {
 	}
 }
 
+// Loader
+.loader {
+	font-size: 5em;
+}
+
 // Display
 .display {
 	background-image: radial-gradient(ellipse farthest-corner at center, lighten($grey, 30%), darken($dark-green, 30%), lighten($dark-green, 30%), darken($grey, 30%));

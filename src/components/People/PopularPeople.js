@@ -10,7 +10,7 @@ import utils from "../../utils/utils";
 
 class Display extends Component {
 	
-	componentWillMount() {
+	componentDidMount() {
 		this.props.fetchPopularPerson();
 	}
 
