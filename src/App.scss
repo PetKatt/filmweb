@@ -4,6 +4,7 @@
 $grey: #38494E;
 $light-green: #01D277;
 $dark-green: #081C24;
+$snappy: cubic-bezier(.17,.67,.83,.67);
 
 // RESET
 * {
@@ -23,6 +24,12 @@ ul {
 
 h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
+}
+
+fieldset {
+	maring: 0;
+	padding: 0;
+	border: none;
 }
 
 // BASE SETTINGS
@@ -384,6 +391,48 @@ body {
 			margin-left: .5em;
 			padding: .5em;
 			border-radius: 1em;
+		}
+	}
+}
+
+// Form
+.form-container {
+	margin: 0 auto;
+	text-align: center;
+	background-color: mix($grey, white, 35%);
+	max-width: 30%;
+	border-radius: 5px;
+	padding: .5em;
+	transition: background-color .43s $snappy;
+
+	&:hover {
+		background-color: darken(mix($grey, white, 35%), 5%);
+	}
+}
+
+.form {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+
+	label {
+		margin-bottom: .3em;
+	}
+
+	input {
+		margin-bottom: .5em;
+		width: 70%;
+		padding: .8em 1em;
+	}
+
+	input[type="submit"] {
+		font-size: 1em;
+		margin-top: 2em;
+		transition: box-shadow .43s $snappy;
+
+		&:hover {
+			box-shadow: 0 .3em 1em #222;
+			cursor: pointer;
 		}
 	}
 }

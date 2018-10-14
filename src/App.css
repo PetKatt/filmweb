@@ -14,6 +14,11 @@ ul {
 h1, h2, h3, h4, h5, h6, p {
   margin: 0; }
 
+fieldset {
+  maring: 0;
+  padding: 0;
+  border: none; }
+
 html {
   font-size: 20px; }
 
@@ -240,6 +245,35 @@ body {
       margin-left: .5em;
       padding: .5em;
       border-radius: 1em; }
+
+.form-container {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #b9bfc1;
+  max-width: 30%;
+  border-radius: 5px;
+  padding: .5em;
+  transition: background-color 0.43s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+  .form-container:hover {
+    background-color: #abb3b5; }
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  .form label {
+    margin-bottom: .3em; }
+  .form input {
+    margin-bottom: .5em;
+    width: 70%;
+    padding: .8em 1em; }
+  .form input[type="submit"] {
+    font-size: 1em;
+    margin-top: 2em;
+    transition: box-shadow 0.43s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+    .form input[type="submit"]:hover {
+      box-shadow: 0 .3em 1em #222;
+      cursor: pointer; }
 
 @media screen and (max-width: 1024px) {
   .navigation .people {
