@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import Loader from "../../Loader/Loader";
+//import Loader from "../../Loader/Loader";
 import Box from "../../Box/Box";
 import Filter from "../../Filter/Filter";
 
@@ -35,8 +35,6 @@ class Display extends Component {
 		const { films, config } = this.props;
 		// console.log("FILMS from Movies.js", films);
 		// console.log("CONFIG from Movies.js", config);
-
-		if(!this.props.films) {return (<Loader action="LOADING > > >" />);}
 
 		const f = films.map((f, i) => {
 			return (

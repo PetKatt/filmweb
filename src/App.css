@@ -89,7 +89,8 @@ body {
       background-color: black; }
 
 .loader {
-  font-size: 5em; }
+  font-size: 5em;
+  color: white; }
 
 .display {
   background-image: radial-gradient(ellipse farthest-corner at center, #7d99a2, black, #247da1, black); }
