@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { FETCH_CONFIGURATION } from "./types";
 import { FETCH_FILMS, FETCH_PEOPLE } from "./types";
+import { FETCH_SELECTEDMOVIE } from "./types";
 
 
 // Configuration API
@@ -238,5 +239,28 @@ export const fetchPopularPerson = () => dispatch => {
 		.catch(err => {
 			console.log(err);
 			throw new Error("Error in fetching PopularPerson Array");
+		});
+}
+
+
+// ------------------------------------------------------------
+// SELECTED FETCHES
+// ------------------------------------------------------------
+
+
+export const fetchSelectedMovie = (id) => dispatch => {
+	const fetchSelectedMovieAPI = `https://api.themoviedb.org/3/movie/${id}?api_key=e474d4efb60111c6e12c76f0330b22e4&language=en-US`;
+
+	axios.get(fetchSelectedMovieAPI)
+		.then(res => {
+			let movieObj = res.data;
+			return dispatch({
+				type: FETCH_SELECTEDMOVIE,
+				payload: movieObj
+			});
+		})
+		.catch(err => {
+			console.log(err);
+			throw new Error("Error in fetching Selected Movie Object");
 		});
 }

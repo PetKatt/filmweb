@@ -24,6 +24,8 @@ import PopularPeople from "./components/People/PopularPeople";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/Login/Login";
 
+import SelectedMovie from "./components/Selected/SelectedMovie";
+
 import './App.css';
 import store from "./store";
 
@@ -86,6 +88,8 @@ class App extends Component {
               <DisplayRoute
                 path="/login"
                 component={Login} />
+
+              <Route exact path="/movie/:movieID" component={SelectedMovie} />
               
             </main>
           </Layout>          

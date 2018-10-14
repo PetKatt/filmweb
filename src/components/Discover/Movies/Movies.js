@@ -77,6 +77,7 @@ class Display extends Component {
 					<button onClick={this.handleOnClick}>Next Page</button>
 					<div>Page {this.props.page}</div>	
 				</div>
+
 			</div>
 		);
 	}
@@ -90,8 +91,8 @@ const mapStateToProps = (state) => ({
 	year: state.update.year
 });
 
-export default connect(mapStateToProps, {
-	fetchDiscoverMovie,
+export default connect(mapStateToProps, 
+{	fetchDiscoverMovie,
 	updatePage,
 	updateSortType,
 	updateYear

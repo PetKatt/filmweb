@@ -1,10 +1,12 @@
 import { FETCH_CONFIGURATION } from "../actions/types";
 import { FETCH_FILMS, FETCH_PEOPLE } from "../actions/types";
+import { FETCH_SELECTEDMOVIE } from "../actions/types";
 
 const initialState = {
 	items: [],
 	people: [],
-	config: {}
+	config: {},
+	selectedMovie: {}
 }
 
 export default function(state=initialState, action) {
@@ -24,6 +26,11 @@ export default function(state=initialState, action) {
 				...state,
 				config: action.payload
 			};
+		case FETCH_SELECTEDMOVIE:
+			return {
+				...state,
+				selectedMovie: action.payload
+			}
 		default:
 			return {
 				...state
